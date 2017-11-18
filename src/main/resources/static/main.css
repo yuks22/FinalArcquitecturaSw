@@ -1,5 +1,5 @@
 body {
-    background-color: #f5f5f5;
+    background-image:url(http://www.zingerbugimages.com/backgrounds/aqua_green_stars.gif);
 }
 
 #main-content {
@@ -11,4 +11,28 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    background-color: #D1F2EB;
+}
+
+#connect{
+	background-color: #1ABC9C;
+	visibility: "hidden";
+}
+
+#disconnect{
+	background-color: #1ABC9C;
+}
+
+#send{
+	background-color: #D1F2EB;
+	border: 2px solid #1ABC9C;
+}
+
+#send2{
+	background-color: #D1F2EB;
+	border: 2px solid #1ABC9C;
+}
+
+thead{
+	background-color: #1ABC9C;
 }

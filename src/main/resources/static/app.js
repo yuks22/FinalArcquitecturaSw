@@ -25,6 +25,22 @@ function connect() {
     });
 }
 
+function hideUsername(u)
+{
+    if(u==1)
+    document.getElementById("usernameForm").style.display="none";
+    else
+    document.getElementById("usernameForm").style.display="block";
+}
+
+function hideButtons(u)
+{
+    if(u==1)
+    document.getElementById("connect").style.display="none";
+    else
+    document.getElementById("disconnect").style.display="block";
+}
+
 function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
