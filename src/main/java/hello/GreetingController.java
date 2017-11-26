@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class GreetingController {
 
-//private int counter = 0;
   private Greeting response = new Greeting();
 
     @MessageMapping("/hello")
@@ -15,7 +14,7 @@ public class GreetingController {
 
     public Greeting greeting(User user, Message message) throws Exception {
 
-        response = new Greeting(/*user.getNameU()+": "+*/ message.getMessage());
+        response = new Greeting(message.getMessage());
         Thread.sleep(1000); // simulated delay
         return response;
     }
