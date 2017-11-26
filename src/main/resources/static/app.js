@@ -47,6 +47,17 @@ function showButtons(u)
 
 }
 
+function required()  
+{  
+    var empt = document.forms["form1"]["text1"].value;
+
+    if (empt == "")  
+    {  
+        alert("Please enter your username");  
+        return false;  
+    }
+}
+
 function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
@@ -60,11 +71,26 @@ function sendUser(){
 }
 
 function sendName() {
-    stompClient.send("/app/hello", {}, JSON.stringify({'name': user+": "+$("#message").val()}));
+    var empt = document.forms["form1"]["text1"].value;
+    var empt2 = document.forms["form2"]["text2"].value;
+
+    if (empt == "")  
+    {  
+        alert("Please enter your message");  
+        return false;  
+    }
+    if (empt2 == "")  
+    {  
+        alert("Please enter your message");  
+        return false;  
+    }else{
+        stompClient.send("/app/hello", {}, JSON.stringify({'name': user+": "+$("#message").val()}));
+    }   
 }
 
 function showGreeting(message) {
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
+
 }
 
 $(function () {
