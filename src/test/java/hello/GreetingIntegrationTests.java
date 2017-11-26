@@ -73,7 +73,7 @@ public class GreetingIntegrationTests {
                     public void handleFrame(StompHeaders headers, Object payload) {
                         Greeting greeting = (Greeting) payload;
                         try {
-                            assertEquals("Hello, Spring!", greeting.getContent());
+                            assertEquals("Yukio", greeting.getContent());
                         } catch (Throwable t) {
                             failure.set(t);
                         } finally {
@@ -83,7 +83,7 @@ public class GreetingIntegrationTests {
                     }
                 });
                 try {
-                    session.send("/app/hello", new Message("Spring"));
+                    session.send("/app/hello", new Message("Yukio"));
                 } catch (Throwable t) {
                     failure.set(t);
                     latch.countDown();
@@ -99,7 +99,57 @@ public class GreetingIntegrationTests {
             }
         }
         else {
-            fail("Greeting not received");
+            fail("Message not received");
+        }
+
+    }
+    @Test
+    public void getGreeting2() throws Exception {
+
+        final CountDownLatch latch = new CountDownLatch(1);
+        final AtomicReference<Throwable> failure = new AtomicReference<>();
+
+        StompSessionHandler handler = new TestSessionHandler(failure) {
+
+            @Override
+            public void afterConnected(final StompSession session, StompHeaders connectedHeaders) {
+                session.subscribe("/topic/greetings", new StompFrameHandler() {
+                    @Override
+                    public Type getPayloadType(StompHeaders headers) {
+                        return Greeting.class;
+                    }
+
+                    @Override
+                    public void handleFrame(StompHeaders headers, Object payload) {
+                        Greeting greeting = (Greeting) payload;
+                        try {
+                            assertEquals("Itzel", greeting.getContent());
+                        } catch (Throwable t) {
+                            failure.set(t);
+                        } finally {
+                            session.disconnect();
+                            latch.countDown();
+                        }
+                    }
+                });
+                try {
+                    session.send("/app/hello", new Message("Itzel"));
+                } catch (Throwable t) {
+                    failure.set(t);
+                    latch.countDown();
+                }
+            }
+        };
+
+        this.stompClient.connect("ws://localhost:{port}/gs-guide-websocket", this.headers, handler, this.port);
+
+        if (latch.await(3, TimeUnit.SECONDS)) {
+            if (failure.get() != null) {
+                throw new AssertionError("", failure.get());
+            }
+        }
+        else {
+            fail("Message not received");
         }
 
     }
