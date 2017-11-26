@@ -26,16 +26,16 @@
             <form class="form-inline" id="usernameForm">
                 <div class="form-group">
                     <label for="message">Whats your username:</label>
-                    <input class="usernameInput" type="text" id="user" maxlength="20" placeholder="User Name"/>
+                    <input type="text" id="user" placeholder="User Name" maxlength="20" required="required"/>
                 </div>
-                <button id="send2" class="btn btn-default" type="submit" onclick="hideUsername(1)">Send</button>
+                <button id="send2" class="btn btn-default" type="submit">Send</button>
             </form>
         </div>
         <div class="col-md-6">
             <form class="form-inline">
                 <div class="form-group">
                     <label for="message">Whats your message:</label>
-                    <input type="text" id="message" class="form-control" placeholder="Here...">
+                    <input type="text" id="message" placeholder="Message" required="required"/>
                 </div>
                 <button id="send" class="btn btn-default" type="submit">Send</button>
                 <br>
