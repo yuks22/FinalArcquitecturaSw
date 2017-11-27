@@ -54,7 +54,7 @@ public class UserIntegrationTest {
     }
 
     @Test
-    public void getUser() throws Exception {
+    public void getConnection() throws Exception {
 
         final CountDownLatch latch = new CountDownLatch(1);
         final AtomicReference<Throwable> failure = new AtomicReference<>();
