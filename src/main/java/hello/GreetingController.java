@@ -19,7 +19,7 @@ public class GreetingController {
     @SendTo("/topic/greetings")
 
     /**
-     * Método que obtiene el contendio a ser desplegado en la aplicacion a partir de un usaurio y un mensaje.
+     * M&eacutetodo que obtiene el contendio a ser desplegado en la aplicacion a partir de un usaurio y un mensaje.
      * @param  User Usuario quien manda el mensaje.
      * @param  Message  El mensje que es enviado
      * @return El contendio a desplegar

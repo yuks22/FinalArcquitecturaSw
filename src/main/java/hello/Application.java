@@ -3,7 +3,7 @@ package hello;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/** Corre la Aplicación.
+/** Corre la Aplicaci&oacuten.
  * Basado en el tutorial de Spring.io
  * @author Diego Granados
  * @author Itzel Reyes

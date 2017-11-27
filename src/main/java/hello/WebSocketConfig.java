@@ -14,7 +14,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @EnableWebSocketMessageBroker
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     /**
-     *Proporciona una configuración esencial para manejar mensajes con protocolos simples de mensajería como STOMP.     * @param MessageBrokerRegistry config [description]
+     *Proporciona una configuraci&oacuten esencial para manejar mensajes con protocolos simples de mensajer&iacutea como STOMP.     * @param MessageBrokerRegistry config [description]
      *@param config La confirucion que se va a llevar a cabo.
      */
     @Override
@@ -23,7 +23,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
         config.setApplicationDestinationPrefixes("/app");
     }
     /**
-     *Define métodos para configurar el manejo de mensajes con el protocolo STOMP para clientes WebSocket.
+     *Define m&eacutetodos para configurar el manejo de mensajes con el protocolo STOMP para clientes WebSocket.
      * @param registry Endopoint a ser agregado.
      */
     @Override
