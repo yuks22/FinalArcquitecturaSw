@@ -25,4 +25,7 @@ En caso de haber algun problema al correr el proyecto, tal vez sea necesario ahc
 
 gradle build
 
-Para poder hacer uso de la aplicación, solo es necesario abrir cualquier navegador de internet y entrar al localhost:8080 
+Para poder hacer uso de la aplicación, solo es necesario abrir cualquier navegador de internet y entrar al localhost:8080
+
+El reporte de los tests se encuentra en la siguiente dirección:
+  ./build/reports/tests/test/index.html
